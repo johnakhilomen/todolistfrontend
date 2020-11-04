@@ -1,0 +1,22 @@
+.list {
+    color: white;
+    background-color: #0FC3DE;
+    width: 300px;
+    height: 50px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;   
+    position: relative;
+    padding-left: 10px;
+    border-radius: 5px;
+    align-items: center;
+    text-align:center;
+   
+}
+
+
+img{
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+}
