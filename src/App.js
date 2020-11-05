@@ -51,7 +51,7 @@ class App extends Component {
   loadUser = (data) =>{
     
     var obj
-    fetch('https://frozen-river-89593.herokuapp.com/todo/' + data.id)
+    fetch('https://salty-escarpment-76188.herokuapp.com/todo/' + data.id)
       .then(res => res.json())
       .then(data => obj = data)
       .then(() => this.setState({items:obj}))
@@ -78,7 +78,7 @@ class App extends Component {
 
   addItem = (item, id) =>  {
     if (item.todo !== ""){
-      fetch('https://frozen-river-89593.herokuapp.com/add/' + id, {
+      fetch('https://salty-escarpment-76188.herokuapp.com/add/' + id, {
         method:'post',
         headers:{'Content-Type' : 'application/json'},
         body:JSON.stringify({
@@ -99,7 +99,7 @@ class App extends Component {
 
   editItem = (todo, id)=>{
     
-    fetch('https://frozen-river-89593.herokuapp.com/todo/' + id, {
+    fetch('https://salty-escarpment-76188.herokuapp.com/todo/' + id, {
         method:'PUT',
         headers:{'Content-Type' : 'application/json', 'Authorization' : 'sdfsfsfwiiowuerewrwrewrww'},
         body:JSON.stringify({
@@ -119,7 +119,7 @@ class App extends Component {
   }
 
   deleteItem = (key) =>{
-    fetch('http://localhost:8000/todo/' + key, {
+    fetch('https://salty-escarpment-76188.herokuapp.com/todo/' + key, {
       method:'delete',
       headers:{'Content-Type' : 'application/json'},
       body:JSON.stringify({ 
@@ -137,7 +137,7 @@ class App extends Component {
     console.log(item)
 
     if (item.done != 0){
-      fetch('http://localhost:8000/toggle/' + item.noteid, {
+      fetch('https://salty-escarpment-76188.herokuapp.com/toggle/' + item.noteid, {
         method:'PUT',
         headers:{'Content-Type' : 'application/json', 'Authorization' : 'sdfsfsfwiiowuerewrwrewrww'},
         body:JSON.stringify({
@@ -154,7 +154,7 @@ class App extends Component {
         this.setState({items:editedItems})
       }) 
     } else {
-      fetch('https://frozen-river-89593.herokuapp.com/toggle/' + item.noteid, {
+      fetch('https://salty-escarpment-76188.herokuapp.com/toggle/' + item.noteid, {
         method:'PUT',
         headers:{'Content-Type' : 'application/json', 'Authorization' : 'sdfsfsfwiiowuerewrwrewrww'},
         body:JSON.stringify({
